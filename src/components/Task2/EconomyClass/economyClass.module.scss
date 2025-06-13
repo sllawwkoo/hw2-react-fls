@@ -1,0 +1,58 @@
+.container {
+	margin-bottom: 20px;
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+.body {
+	background: linear-gradient(to right, #dbeafe, #e0f2fe);
+	padding: 20px;
+	border-radius: 10px;
+	border: 1px solid #3b82f6;
+}
+
+.title {
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	color: #1e40af;
+}
+
+.selectGroup {
+	margin-bottom: 15px;
+}
+
+.label {
+	display: block;
+	font-weight: 500;
+	margin-bottom: 8px;
+	color: #374151;
+}
+
+.select {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #d1d5db;
+	border-radius: 8px;
+	background: white;
+	transition: all 0.3s ease;
+}
+
+.economyMessage {
+	margin-top: 15px;
+	padding: 15px;
+	background: #bfdbfe;
+	border-radius: 8px;
+	color: #1e40af;
+	font-size: 14px;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

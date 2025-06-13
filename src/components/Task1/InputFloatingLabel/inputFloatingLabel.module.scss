@@ -1,0 +1,73 @@
+.inputContainer{
+	position: relative;
+	// marginBottom: '1.5rem'
+}
+
+.input {
+	width: 100%;
+	// padding: 16px;
+	padding: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+	border: 2px solid #d1d5db;
+	border-radius: 10px;
+	background-color: white;
+	outline: none;
+	// font-size: 20px;
+	font-size: clamp(0.875rem, 0.739rem + 0.68vw, 1.25rem);
+	transition: border 0.3s ease;
+	will-change: border;
+
+	&.focused {
+		border: 2px solid #5565f7
+	}
+}
+
+.label {
+	position: absolute;
+	left: 3%;
+	top: 50%;
+	background-color: white;
+	padding: 0 8px;
+	color: #6b7280;
+	transition: all 0.3s ease;
+	pointer-events: none;
+	// font-size: 20px;
+	font-size: clamp(0.875rem, 0.739rem + 0.68vw, 1.25rem);
+	transform: scale(1) translateY(-50%);
+
+	&.floating  {
+		top: -16%;
+		color: #5565f7;
+		// font-size: 18px ;
+		font-size: clamp(0.75rem, 0.614rem + 0.68vw, 1.125rem);
+		transform: scale(0.9)
+	}
+}
+.passwordToggle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+	border-radius: 5px;
+	position: absolute;
+	right: 4%;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #6b7280;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+	will-change: background-color, transform;
+	outline: none;
+
+
+	&:hover {
+		background-color: rgba(107, 114, 128, 0.3);
+	}
+
+	&:active {
+		background-color: rgba(107, 114, 128, 0.3);
+		top: 52%;
+		transform: translateY(-52%) 
+	}
+}
