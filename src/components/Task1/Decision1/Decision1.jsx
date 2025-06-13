@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./decision1.module.scss";
-import InputFloatingLabel from "../InputFloatingLabel/inputFloatingLabel";
+import InputFloatingLabel from "../InputFloatingLabel/InputFloatingLabel";
 import Result1 from "../Result1/Result1";
 
 function Decision1() {

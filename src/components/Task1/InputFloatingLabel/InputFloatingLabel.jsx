@@ -55,8 +55,6 @@ function InputFloatingLabel({
 					type="button"
 					onClick={handleClick}
 					className={styles.passwordToggle}
-					// onMouseEnter={(e) => (e.target.style.color = "#374151")}
-					// onMouseLeave={(e) => (e.target.style.color = "#6b7280")}
 				>
 					{showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
 				</button>
