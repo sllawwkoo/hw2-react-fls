@@ -23,29 +23,41 @@ function Decision6() {
 	}
 
 	function handleClickAdd() {
-		setWaitingList([
-			...waitingList,
-			{ id: new Date().getTime(), dish: value },
+		const trimmedValue = value.trim();
+		if (trimmedValue === "") return;
+
+		setWaitingList((prevWaitingList) => [
+			...prevWaitingList,
+			{ id: Date.now(), dish: trimmedValue },
 		]);
 		setValue("");
 	}
 
-	function handleClickPrepare (id) {
-		const item = waitingList.find(item => item.id === id);
-		setWaitingList(waitingList.filter(item => item.id !== id));
-		setProcessList([...processList, item]);
+	function handleClickPrepare(id) {
+		const dish = waitingList.find((dish) => dish.id === id);
+		if (!dish) return;
+
+		setWaitingList((prevWaitingList) =>
+			prevWaitingList.filter((dish) => dish.id !== id)
+		);
+		setProcessList((prevProcessList) => [...prevProcessList, dish]);
 	}
 
-	function handleClickCooked (id) {
-		const item = processList.find(item => item.id === id);
-		setProcessList(processList.filter(item => item.id !== id));
-		setCompletedList([...completedList, item]);
+	function handleClickCooked(id) {
+		const dish = processList.find((dish) => dish.id === id);
+		if (!dish) return;
+
+		setProcessList((prevProcessList) =>
+			prevProcessList.filter((dish) => dish.id !== id)
+		);
+		setCompletedList((prevCompletedList) => [...prevCompletedList, dish]);
 	}
 
-	function handleClickServed (id) {
-		const item = completedList.find(item => item.id === id);
-		setCompletedList(completedList.filter(item => item.id !== id));
-	}	
+	function handleClickServed(id) {
+		setCompletedList((prevCompletedList) =>
+			prevCompletedList.filter((dish) => dish.id !== id)
+		);
+	}
 
 	return (
 		<div className={styles.wrapper}>
